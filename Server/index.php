@@ -49,7 +49,7 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 //Again, we grab the table out of the database, name is ESPtable2 in this case
-$sql = $conn,"SELECT * FROM liquid_level";//table select
+$sql = "SELECT * FROM liquid_level";//table select
 
 
 		  
@@ -73,8 +73,8 @@ echo "<table class='table' style='font-size: 30px;'>
 if ($result = $conn->query($sql)) {
     while ($row = $result->fetch_assoc()) {
         $row_id = $row["id"];
-		$row_sensor = $row["level"];
-		$row_timestamp = $row["time_stamp"];
+	    	$row_sensor = $row["level"];
+		    $row_timestamp = $row["time_stamp"];
         // Uncomment to set timezone to - 1 hour (you can change 1 to any number)
         //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time - 1 hours"));
       
@@ -89,7 +89,6 @@ if ($result = $conn->query($sql)) {
     }
     $result->free();
 }
- 
 $conn->close();
 ?>
 		
