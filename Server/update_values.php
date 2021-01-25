@@ -1,15 +1,5 @@
 <?php
 
-/*
-  Rui Santos
-  Complete project details at https://RandomNerdTutorials.com/esp32-esp8266-mysql-database-php/
-  
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files.
-  
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-*/
 
 $servername = "localhost";
 
@@ -28,7 +18,6 @@ $api_key= $level = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
-    
     if($api_key == $api_key_value) {
         $level = test_input($_POST["level"]);
 
@@ -51,9 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         $conn->close();
     }
-    // else {
-    //     echo "Wrong API Key provided.";
-    // }
+    else {
+        echo "Wrong API Key provided.";
+    }
 
 }
 else {
